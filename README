@@ -1,0 +1,10 @@
+This is a collection of bash scripts to convert the ILTP library into
+the format accepted by ileancop 1.2, to run ileancop on the translated
+problems and collect statistics. The scripts use the tptp2X program
+that comes with the library.
+
+You need to download the ILTP library v1.1.2 from: www.iltp.de. Unpack
+it into the ILTP subdirectory. Then the ILTP/TPTP2X directory contains
+the conversion program. This program requires Eclipse Prolog 5.0 (old
+version; doesn't work with new versions). To make it work you may also
+need to outcomment some formats in the ILTP/TPTP2X/tptp2X.main file.
