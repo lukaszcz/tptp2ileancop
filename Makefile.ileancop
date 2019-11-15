@@ -1,0 +1,12 @@
+FFILES=$(shell find problems/ -name "*.icp" | sort -R)
+OFILES=$(patsubst problems/%.icp,problems/%.done,$(FFILES))
+
+all: $(OFILES)
+
+problems/%.done: problems/%.icp
+	-htimeout $(LIMIT) /usr/bin/time -f "time: %e secs" ileancop.sh "$<" $(LIMIT) > logs/`basename "$@" .done`.log 2>&1
+	touch $@
+
+ifndef VERBOSE
+.SILENT:
+endif
